@@ -21,11 +21,13 @@ Key features:
    git clone https://github.com/ahmetsenemse/PIGNN-1D-Blood-Flow-Simulation.git
    cd PIGNN-1D-Blood-Flow-Simulation
 
-2. python -m venv venv
+2. ```bash
+   python -m venv venv
    source venv/bin/activate     # On Windows: venv\Scripts\activate
    pip install -r requirements.txt
 
-3. cd PIGNN_1_artery
+3. ```bash
+   cd PIGNN_1_artery
    python GNN.py
 
 
