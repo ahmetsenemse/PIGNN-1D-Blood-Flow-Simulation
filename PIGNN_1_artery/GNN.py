@@ -140,7 +140,7 @@ N = dataset.n_nodes  # Number of nodes in the graph
 F = dataset.n_node_features  # Original size of node features
 n_out = dataset.n_labels  # Number of classes
 
-model=GNN(N,F,n_out,32,1,1,'tanh','LeakyReLU')
+model=GNN(N,F,n_out,16,1,1,'tanh','LeakyReLU')
 	
 def customloss():
 	def loss_fn(y_true,y_pred):
