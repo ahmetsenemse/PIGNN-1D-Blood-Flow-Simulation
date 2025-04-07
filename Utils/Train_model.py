@@ -12,9 +12,9 @@ from Metrics import R2_Lumen_Area_mt,R2_Velocity_mt,RRMSE_Lumen_Area_mt,RRMSE_Ve
 
 
 
-def fit_model(loader,model,inlet_points,Test_data_A,Test_data_V,Nodes,N_t,customloss,epocs):
+def fit_model(loader,model,inlet_points,Test_data_A,Test_data_V,Nodes,N_t,customloss,epocs,lr,lr_change,drop_lr):
 
-    optimizer = Adam(learning_rate=0.001)
+    optimizer = Adam(learning_rate=lr)
     model.compile(
         optimizer=optimizer,
         loss=customloss(),  # To compute mean
@@ -23,8 +23,8 @@ def fit_model(loader,model,inlet_points,Test_data_A,Test_data_V,Nodes,N_t,custom
     
     def scheduler(epoch, lr):
         lr=0.001
-        if epoch>90000:
-        	lr=0.0001
+        if epoch>lr_change:
+        	lr=drop_lr
         return lr
             
     callback = tf.keras.callbacks.LearningRateScheduler(scheduler)      
