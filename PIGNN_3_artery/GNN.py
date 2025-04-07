@@ -199,7 +199,7 @@ def customloss():
 loader  = SingleLoader(dataset) 
 
 
-fit_model(loader,model,inlet_points,Test_data_A,Test_data_V,Nodes,N_t,customloss,100000)
+fit_model(loader,model,inlet_points,Test_data_A,Test_data_V,Nodes,N_t,customloss,100000,0.001,90000,0.0001)
 p=model([dataset[0].x,dataset[0].a], training=False)
 
 A=tf.exp(p[:,N_t:])
