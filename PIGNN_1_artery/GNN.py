@@ -173,7 +173,7 @@ loader  = SingleLoader(dataset)
        
             
 
-fit_model(loader,model,inlet_points,Test_data_A,Test_data_V,Nodes,N_t,customloss,30000)
+fit_model(loader,model,inlet_points,Test_data_A,Test_data_V,Nodes,N_t,customloss,30000,0.002,15000,0.0005)
 
 
 
